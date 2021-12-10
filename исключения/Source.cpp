@@ -14,10 +14,15 @@ class YM {
 public:
 	YM(int a, int b) : one(a), two(b) {}
 		
-	 void as (){
+	 int as (){
 		int z = one * two;
-		if (one > 0 && two < 0 || one < 0 && two > 0)
-		throw - z;
+		if (one > 0 && two < 0 || one < 0 && two > 0) {
+			throw - z;
+		}
+		else {
+			return z;
+		}
+		
 	}
 	friend ostream& operator << (ostream& out, const YM& p) {
 		out << p.one << " " << p.two << endl;
@@ -43,8 +48,10 @@ int main() {
 		cout << "You entered the wrong number" << endl;
 		cin >> one;
 	}
-	//cin >> one;
-	cout << one;
+	
+	one.as();
+	cout << one.as() << endl;
+	cout << one <<endl;
 
 	cout << "proga otrabotala" << endl;
 	
