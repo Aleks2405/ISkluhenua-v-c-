@@ -44,18 +44,21 @@ public:
 	}
 };
 int main() {
-	//YM one(-5, 5);
-	//try {
-	//	one.as();
-	//}
-	//catch (int) {
-	//		cout << "You entered the wrong number" << endl;
-	//		cin >> one;
-	//	}
+	YM one(-5, 5);
+	while (true) {
+		try {
+			one.as();
+			break;
+		}
+		catch (int) {
+			cout << "You entered the wrong number" << endl;
+			cin >> one;
+		}
+	}
 	
-	//one.as();
-	//cout << one.as() << endl;
-	rabot one;
+	one.as();
+	cout << one.as() << endl;
+	/*rabot one;
 	try {
 		one.file("arr.txt");
 	}
@@ -64,7 +67,7 @@ int main() {
 	}
 
 
-	cout << "proga otrabotala" << endl;
+	cout << "proga otrabotala" << endl;*/
 	
 }
 /*
