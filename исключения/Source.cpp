@@ -1,5 +1,6 @@
   #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 /*Задание 2.
 Создайте иерархию пользовательских классов-исключений.
@@ -38,11 +39,14 @@ class rabot {
 public:
 	void file(const char* part) {
 		ofstream fout(part);
-		if (!fout)
+		//fout.open(part);
+		if (!fout) {
 			throw "File not opened!";
-		
+		}
+		//fout.close();
 	}
 };
+
 int main() {
 	YM one(-5, 5);
 	while (true) {
@@ -55,43 +59,9 @@ int main() {
 			cin >> one;
 		}
 	}
-	
-	one.as();
 	cout << one.as() << endl;
-	/*rabot one;
-	try {
-		one.file("arr.txt");
-	}
-	catch (char*err) {
-		cout << " fail netu" << endl;
-	}
 
-
-	cout << "proga otrabotala" << endl;*/
 	
 }
-/*
-#include <iostream>
-#include <exception>
 
-class A
-{
-public:
-	void foo()
-	{
-		throw std::exception("Oops!");
-	}
-};
-
-int main()
-{
-	try
-	{
-		A a;
-		a.foo();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << "tut" << std::endl;
-	}
-}*/
+	
